@@ -13,6 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->post('/oauth/token', function (Request $request) {
-    return;
-});
+Route::get('/', 'AppController@index');
