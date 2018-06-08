@@ -36,7 +36,7 @@ class AppController extends Controller
 
         $http = new Client;
 
-        $response = $http->request('POST', 'https://recognition.image.myqcloud.com/ocr/general', [
+        $response = $http->request('POST', 'http://recognition.image.myqcloud.com/ocr/general', [
                         'headers' => [
                             'Host'=>'recognition.image.myqcloud.com',
                             'Authorization'  => $signStr,
