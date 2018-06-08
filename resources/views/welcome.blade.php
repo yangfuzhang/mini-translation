@@ -32,7 +32,9 @@
 </head>
 <body>
 
-    <div id="app"></div>
+    <div id="app">
+        这是测试页面
+    </div>
     
     <!-- <script src="/js/app.js"></script> -->
 </body>
