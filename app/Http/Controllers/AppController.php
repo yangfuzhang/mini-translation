@@ -17,7 +17,7 @@ class AppController extends Controller
     }
 
     public function recognize(Request $request) {
-        $rec_type = $request->rect_type;
+        $rec_type = $request->rec_type;
         $path = $request->path;
 
         $appid = '1253144008';
@@ -46,7 +46,7 @@ class AppController extends Controller
                         'json' => [
                             'appid'  => $appid,
                             'bucket' => $bucket,
-                            'url'    => $path
+                            'url'    => 'https://limepietech.com/public/images/upload/8mkJcAEYW1tqef3A6rZ6cdl5qkGGNkKIk7O6BLYF.jpeg'
                         ],
                         'verify' => false
                     ]);
@@ -60,6 +60,6 @@ class AppController extends Controller
             $text .= $result['itemstring'].'<br>';
         }
 
-        return response()->json(['text'=>$text]);
+        return response()->json(['text'=>'success']);
     }
 }
