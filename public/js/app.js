@@ -86301,7 +86301,7 @@ var render = function() {
                       _c("img", {
                         attrs: {
                           src:
-                            "http://www.limepietech.com/public/images/web.png"
+                            "https://www.limepietech.com/public/images/web.png"
                         }
                       })
                     ]
