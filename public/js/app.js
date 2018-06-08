@@ -86335,7 +86335,7 @@ var render = function() {
                           staticClass: "image",
                           attrs: {
                             src:
-                              "http://www.limepietech.com/public/images/website.png"
+                              "https://www.limepietech.com/public/images/website.png"
                           }
                         }),
                         _vm._v(" "),
@@ -86386,7 +86386,7 @@ var render = function() {
                           staticClass: "image",
                           attrs: {
                             src:
-                              "http://www.limepietech.com/public/images/wechat.png"
+                              "https://www.limepietech.com/public/images/wechat.png"
                           }
                         }),
                         _vm._v(" "),
@@ -86443,7 +86443,7 @@ var render = function() {
                 "a",
                 {
                   attrs: {
-                    href: "http://www.miitbeian.gov.cn",
+                    href: "https://www.miitbeian.gov.cn",
                     target: "_blank"
                   }
                 },

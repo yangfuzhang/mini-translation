@@ -31,7 +31,7 @@
 		    <el-col :xs="{span:24, offset:0}" :md="{span:18, offset:5}" :lg="{span:14, offset:5}" style="margin-top:40px;">
 		        <el-col :lg="{span:8, offset:3}">
 		        	<el-card>
-			            <img src="http://www.limepietech.com/public/images/website.png" class="image">
+			            <img src="https://www.limepietech.com/public/images/website.png" class="image">
 				        <div style="padding:14px;text-align:center;" id="contact">
 				            <span style="font-size:16px;">网站建设</span>
 					        <div class="bottom clearfix">
@@ -43,7 +43,7 @@
 
 		        <el-col :lg="{span:8, offset:2}">
 		        	<el-card>
-			            <img src="http://www.limepietech.com/public/images/wechat.png" class="image">
+			            <img src="https://www.limepietech.com/public/images/wechat.png" class="image">
 				        <div style="padding:14px;">
 				            <span style="font-size:16px;">小程序开发</span>
 					        <div class="bottom clearfix">
@@ -58,7 +58,7 @@
     
     <el-footer>
         <el-col :xs="{span:24, offset:0}" :md="{span:20, offset:2}" :lg="{span:16, offset:4}">
-        	©Copyright 深圳市酸橙派网络科技有限公司 <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备16126593号</a>
+        	©Copyright 深圳市酸橙派网络科技有限公司 <a href="https://www.miitbeian.gov.cn" target="_blank">粤ICP备16126593号</a>
         </el-col>
     </el-footer>
   </el-container>
