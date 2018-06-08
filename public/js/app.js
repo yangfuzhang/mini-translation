@@ -86179,7 +86179,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("passport-clients")
+  return _c(
+    "el-row",
+    [
+      _c("el-button", [_vm._v("默认按钮")]),
+      _vm._v(" "),
+      _c("el-button", { attrs: { type: "primary" } }, [_vm._v("主要按钮")]),
+      _vm._v(" "),
+      _c("el-button", { attrs: { type: "success" } }, [_vm._v("成功按钮")]),
+      _vm._v(" "),
+      _c("el-button", { attrs: { type: "info" } }, [_vm._v("信息按钮")]),
+      _vm._v(" "),
+      _c("el-button", { attrs: { type: "warning" } }, [_vm._v("警告按钮")]),
+      _vm._v(" "),
+      _c("el-button", { attrs: { type: "danger" } }, [_vm._v("危险按钮")])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

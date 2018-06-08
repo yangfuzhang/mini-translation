@@ -32,10 +32,8 @@
 </head>
 <body>
 
-    <div id="app">
-        这是测试页面
-    </div>
+    <div id="app"></div>
     
-    <!-- <script src="/js/app.js"></script> -->
+    <script src="/js/app.js"></script>
 </body>
 </html>
