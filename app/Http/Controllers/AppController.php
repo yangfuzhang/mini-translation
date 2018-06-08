@@ -38,7 +38,6 @@ class AppController extends Controller
 
         $response = $http->request('POST', 'https://recognition.image.myqcloud.com/ocr/general', [
                         'headers' => [
-                            'User-Agent' => 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 1.1.4322)',
                             'Host'=>'recognition.image.myqcloud.com',
                             'Authorization'  => $signStr,
                             'Content-Length' => 187,
