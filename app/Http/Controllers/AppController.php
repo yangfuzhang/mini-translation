@@ -54,8 +54,8 @@ class AppController extends Controller
     }
 
     public function upload(Request $request) {
-        $image_path = $request->file('rec_image')->store('images');
-        
+        $image_path = $request->file('rec_image')->store('upload');
+
 
         return response()->json(['image_path'=>$image_path]);
     }
