@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-/node_modules
-config/database.php
 /public/hot
 /storage/*.key
 /.idea
@@ -8,7 +6,6 @@ Homestead.json
 Homestead.yaml
 .env
 =======
-node_modules/
 npm-debug.log
 
 # Laravel 4 specific
