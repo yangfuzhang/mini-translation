@@ -14,3 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', 'AppController@index');
+Route::post('/upload', 'AppController@upload');

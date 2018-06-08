@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Storage;
 
 class AppController extends Controller
 {
@@ -34,7 +35,7 @@ class AppController extends Controller
 					    'json' => [
 					        'appid'  => $appid,
 					        'bucket' => $bucket,
-					        'url'    => 'http://limepie-1253144008.picgz.myqcloud.com/微信截图_20180608150953.png'
+					        'url'    => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528504210984&di=f84fc157716ae89bfaac67cf065ac9d3&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201303%2F30%2F20130330230514_KV4nj.thumb.700_0.jpeg'
 					    ],
 					    'verify' => false
 					]);
@@ -43,10 +44,18 @@ class AppController extends Controller
     	$results = $res['data']['items'];
     	$text = '';
 
+        var_dump($res);
+
         foreach($results as $result) {
         	$text .= $result['itemstring'].'<br>';
         }
 
     	echo $text;
+    }
+
+    public function upload(Request $request) {
+        $image_path = $request->file('rec_image')->store();
+
+        return response()->json(['image_path'=>$image_path]);
     }
 }
