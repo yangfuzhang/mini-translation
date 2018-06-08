@@ -46,7 +46,7 @@ class AppController extends Controller
                         'json' => [
                             'appid'  => $appid,
                             'bucket' => $bucket,
-                            'url'    => 'https://limepietech.com/public/images/upload/8mkJcAEYW1tqef3A6rZ6cdl5qkGGNkKIk7O6BLYF.jpeg'
+                            'url'    => 'http://limepie-1253144008.picgz.myqcloud.com/微信图片_20180609053635.jpg'
                         ],
                         'verify' => false
                     ]);
