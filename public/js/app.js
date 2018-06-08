@@ -86438,8 +86438,16 @@ var render = function() {
               }
             },
             [
-              _vm._v(
-                "\n        \t©Copyright 深圳市酸橙派网络科技有限公司 粤ICP备16126593号\t\n        "
+              _vm._v("\n        \t©Copyright 深圳市酸橙派网络科技有限公司 "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "http://www.miitbeian.gov.cn",
+                    target: "_blank"
+                  }
+                },
+                [_vm._v("粤ICP备16126593号")]
               )
             ]
           )

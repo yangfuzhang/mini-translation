@@ -58,7 +58,7 @@
     
     <el-footer>
         <el-col :xs="{span:24, offset:0}" :md="{span:20, offset:2}" :lg="{span:16, offset:4}">
-        	©Copyright 深圳市酸橙派网络科技有限公司 粤ICP备16126593号	
+        	©Copyright 深圳市酸橙派网络科技有限公司 <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备16126593号</a>
         </el-col>
     </el-footer>
   </el-container>
