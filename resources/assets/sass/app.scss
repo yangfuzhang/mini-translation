@@ -1,0 +1,17 @@
+// Fonts
+//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "~vue-material/dist/theme/engine"; // Import the theme engine
+
+@include md-register-theme("default", (
+    primary: md-get-palette-color(blue, A200), // The primary color of your application
+    accent: md-get-palette-color(red, A200) // The accent and secondary color
+));
+
+@import "~vue-material/dist/theme/all"; // Apply the theme
