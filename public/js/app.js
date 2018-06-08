@@ -86019,15 +86019,19 @@ module.exports = function (css) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(193)
+}
 var normalizeComponent = __webpack_require__(184)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(197)
 /* template */
 var __vue_template__ = __webpack_require__(185)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -86180,19 +86184,268 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "el-row",
+    "el-container",
     [
-      _c("el-button", [_vm._v("默认按钮")]),
+      _c(
+        "el-header",
+        [
+          _c(
+            "el-row",
+            [
+              _c(
+                "el-col",
+                {
+                  attrs: {
+                    xs: { span: 6, offset: 0 },
+                    md: { span: 2, offset: 2 },
+                    lg: { span: 2, offset: 4 }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "appname" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "https://www.limepietech.com",
+                          target: "_blank"
+                        }
+                      },
+                      [_vm._v("酸橙派")]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-col",
+                {
+                  attrs: {
+                    xs: { span: 18, offset: 0 },
+                    md: { span: 18, offset: 0 },
+                    lg: { span: 14, offset: 0 }
+                  }
+                },
+                [
+                  _c(
+                    "el-menu",
+                    {
+                      staticClass: "el-menu-demo",
+                      attrs: { mode: "horizontal" },
+                      on: { select: _vm.handleSelect }
+                    },
+                    [
+                      _c("el-menu-item", { attrs: { index: "2" } }, [
+                        _c("a", { attrs: { href: "#contact" } }, [
+                          _vm._v("联系我们")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", { attrs: { index: "1" } }, [
+                        _c("a", { attrs: { href: "#contact" } }, [
+                          _vm._v("服务介绍")
+                        ])
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("el-button", { attrs: { type: "primary" } }, [_vm._v("主要按钮")]),
+      _c(
+        "el-main",
+        [
+          _c(
+            "el-row",
+            [
+              _c(
+                "el-col",
+                {
+                  attrs: {
+                    xs: { span: 24, offset: 0 },
+                    md: { span: 20, offset: 2 },
+                    lg: { span: 16, offset: 4 }
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticStyle: { width: "100%", "text-align": "center" },
+                      attrs: { id: "service" }
+                    },
+                    [
+                      _c(
+                        "h2",
+                        {
+                          staticStyle: {
+                            "font-size": "32px",
+                            color: "#555",
+                            "font-weight": "bold"
+                          }
+                        },
+                        [_vm._v("网站建设、小程序开发")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { attrs: { id: "slogan" } }, [
+                        _vm._v("互联网+的时代，让您的产品离用户更近")
+                      ]),
+                      _vm._v(" "),
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "http://www.limepietech.com/public/images/web.png"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "el-row",
+            [
+              _c(
+                "el-col",
+                {
+                  staticStyle: { "margin-top": "40px" },
+                  attrs: {
+                    xs: { span: 24, offset: 0 },
+                    md: { span: 18, offset: 5 },
+                    lg: { span: 14, offset: 5 }
+                  }
+                },
+                [
+                  _c(
+                    "el-col",
+                    { attrs: { lg: { span: 8, offset: 3 } } },
+                    [
+                      _c("el-card", [
+                        _c("img", {
+                          staticClass: "image",
+                          attrs: {
+                            src:
+                              "http://www.limepietech.com/public/images/website.png"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticStyle: {
+                              padding: "14px",
+                              "text-align": "center"
+                            },
+                            attrs: { id: "contact" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              { staticStyle: { "font-size": "16px" } },
+                              [_vm._v("网站建设")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "bottom clearfix" },
+                              [
+                                _c(
+                                  "el-button",
+                                  {
+                                    staticClass: "button",
+                                    attrs: { type: "text" }
+                                  },
+                                  [_vm._v("定制开发")]
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        )
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-col",
+                    { attrs: { lg: { span: 8, offset: 2 } } },
+                    [
+                      _c("el-card", [
+                        _c("img", {
+                          staticClass: "image",
+                          attrs: {
+                            src:
+                              "http://www.limepietech.com/public/images/wechat.png"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticStyle: { padding: "14px" } }, [
+                          _c("span", { staticStyle: { "font-size": "16px" } }, [
+                            _vm._v("小程序开发")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "bottom clearfix" },
+                            [
+                              _c(
+                                "el-button",
+                                {
+                                  staticClass: "button",
+                                  attrs: { type: "text" }
+                                },
+                                [_vm._v("极速开发")]
+                              )
+                            ],
+                            1
+                          )
+                        ])
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("el-button", { attrs: { type: "success" } }, [_vm._v("成功按钮")]),
-      _vm._v(" "),
-      _c("el-button", { attrs: { type: "info" } }, [_vm._v("信息按钮")]),
-      _vm._v(" "),
-      _c("el-button", { attrs: { type: "warning" } }, [_vm._v("警告按钮")]),
-      _vm._v(" "),
-      _c("el-button", { attrs: { type: "danger" } }, [_vm._v("危险按钮")])
+      _c(
+        "el-footer",
+        [
+          _c(
+            "el-col",
+            {
+              attrs: {
+                xs: { span: 24, offset: 0 },
+                md: { span: 20, offset: 2 },
+                lg: { span: 16, offset: 4 }
+              }
+            },
+            [
+              _vm._v(
+                "\n        \t©Copyright 深圳市酸橙派网络科技有限公司 粤ICP备16126593号\t\n        "
+              )
+            ]
+          )
+        ],
+        1
+      )
     ],
     1
   )
@@ -86212,6 +86465,446 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(194);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(195)("5389b8d6", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e856ba72\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./App.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e856ba72\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./App.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(178)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\na, a:hover, a:active {\n  color:#888;\n  text-decoration:none;\n}\n.appname {\n  font-size:18px;\n}\n.el-header {\n  width:100%;\n  height:60px;\n  line-height:60px;\n  background-color:#fff;\n  color:#333;\n  border-bottom:1px solid #d3e0e9;\n}\n.el-menu {\n\theight:60px;\n\ttext-align:right !important;\n}\n.el-menu-item {\n\tfloat:right !important;\n}\n#slogan {\n\tmargin-top:10px;\n\tfont-size:16px;\n\tcolor:#999;\n}\nimg {\n\tmax-width:100%;\n}\n.el-card {\n\tmargin-bottom:20px;\n}\n.el-card__body {\n\ttext-align:center;\n}\n.image {\n\twidth:140px;\n}\n.el-footer {\n\tline-height:60px;\n\tmargin-top:50px;\n\ttext-align:center;\n}\n@media screen and (max-width:600px) {\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 195 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(196)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction) {
+  isProduction = _isProduction
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+/* 197 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      activeIndex: '1'
+    };
+  },
+  created: function created() {},
+  mounted: function mounted() {},
+
+  methods: {
+    handleSelect: function handleSelect() {
+      console.log('hello');
+    }
+  },
+  computed: {}
+});
 
 /***/ })
 /******/ ]);
