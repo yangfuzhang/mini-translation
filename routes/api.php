@@ -13,5 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('recognize', 'AppController@recognize');
+Route::get('recognize', 'AppController@recognize');
 Route::post('/upload', 'AppController@upload');

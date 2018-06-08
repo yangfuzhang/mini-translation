@@ -17,7 +17,7 @@ class AppController extends Controller
     }
 
     public function recognize(Request $request) {
-        $rec_type = $request->rec_type;
+        //$rec_type = $request->rec_type;
         $path = $request->path;
 
         $appid = '1253144008';
