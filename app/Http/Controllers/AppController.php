@@ -53,11 +53,12 @@ class AppController extends Controller
 
         $res = json_decode((string) $response->getBody(), true);
         $results = $res['data']['items'];
+        $angle = $res['data']['angle'];
 
         if($res['code'] != 0) {
             return response()->json(['status'=>0, 'msg'=>'图片识别失败！']);
         }
 
-        return response()->json(['status'=>1, 'results'=>$results]);
+        return response()->json(['status'=>1, 'results'=>$results, 'angle'=>$angle]);
     }
 }
