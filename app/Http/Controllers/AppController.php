@@ -48,8 +48,7 @@ class AppController extends Controller
                             'bucket' => $bucket,
                             'url'    => $path
                         ],
-                        'verify' => false,
-                        'timeout' => 5
+                        'verify' => false
                     ]);
 
         $res = json_decode((string) $response->getBody(), true);
