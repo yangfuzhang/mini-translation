@@ -46,7 +46,7 @@ class AppController extends Controller
                         'json' => [
                             'appid'  => $appid,
                             'bucket' => $bucket,
-                            'url'    => 'http://limepie-1253144008.picgz.myqcloud.com/微信图片_20180609053635.jpg'
+                            'url'    => $path
                         ],
                         'verify' => false,
                         'timeout' => 5
