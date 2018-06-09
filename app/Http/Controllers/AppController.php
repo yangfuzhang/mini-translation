@@ -34,48 +34,32 @@ class AppController extends Controller
 
         $signStr = base64_encode(hash_hmac('SHA1', $srcStr, $secret_key, true).$srcStr);
 
-        $http = new Client;
+        $http = new Client; 
 
-        $response = $http->request('GET', 'https://www.limepietech.com', [
+        $response = $http->request('POST', 'https://recognition.image.myqcloud.com/ocr/general', [
                         'headers' => [
                             'Host'=>'recognition.image.myqcloud.com',
                             'Authorization'  => $signStr,
-                            'Content-Length' => 187,
+                            //'Content-Length' => 187,
                             'Content-Type'   => 'application/json'
                         ],
-                        // 'json' => [
-                        //     'appid'  => $appid,
-                        //     'bucket' => $bucket,
-                        //     'url'    => 'http://limepie-1253144008.picgz.myqcloud.com/微信图片_20180609053635.jpg'
-                        // ],
+                        'json' => [
+                            'appid'  => $appid,
+                            'bucket' => $bucket,
+                            'url'    => 'http://limepie-1253144008.picgz.myqcloud.com/微信图片_20180609053635.jpg'
+                        ],
                         'verify' => false,
                         'timeout' => 5
                     ]);
 
-        // $response = $http->request('POST', 'https://recognition.image.myqcloud.com/ocr/general', [
-        //                 'headers' => [
-        //                     'Host'=>'recognition.image.myqcloud.com',
-        //                     'Authorization'  => $signStr,
-        //                     'Content-Length' => 187,
-        //                     'Content-Type'   => 'application/json'
-        //                 ],
-        //                 'json' => [
-        //                     'appid'  => $appid,
-        //                     'bucket' => $bucket,
-        //                     'url'    => 'http://limepie-1253144008.picgz.myqcloud.com/微信图片_20180609053635.jpg'
-        //                 ],
-        //                 'verify' => false,
-        //                 'timeout' => 5
-        //             ]);
-
-        // $res = json_decode((string) $response->getBody(), true);
-        // $results = $res['data']['items'];
-        // $text = '';
+        $res = json_decode((string) $response->getBody(), true);
+        $results = $res['data']['items'];
+        $text = '';
 
 
-        // foreach($results as $result) {
-        //     $text .= $result['itemstring'].'<br>';
-        // }
+        foreach($results as $result) {
+            $text .= $result['itemstring'].'<br>';
+        }
 
         return response()->json(['text'=>'success']);
     }
