@@ -37,12 +37,12 @@ class AppController extends Controller
         $http = new Client;
 
         $response = $http->request('GET', 'https://www.limepietech.com', [
-                        // 'headers' => [
-                        //     'Host'=>'recognition.image.myqcloud.com',
-                        //     'Authorization'  => $signStr,
-                        //     'Content-Length' => 187,
-                        //     'Content-Type'   => 'application/json'
-                        // ],
+                        'headers' => [
+                            'Host'=>'recognition.image.myqcloud.com',
+                            'Authorization'  => $signStr,
+                            'Content-Length' => 187,
+                            'Content-Type'   => 'application/json'
+                        ],
                         // 'json' => [
                         //     'appid'  => $appid,
                         //     'bucket' => $bucket,
