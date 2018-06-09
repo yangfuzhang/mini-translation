@@ -40,7 +40,7 @@ class AppController extends Controller
                         'headers' => [
                             'Host'=>'recognition.image.myqcloud.com',
                             'Authorization'  => $signStr,
-                            //'Content-Length' => 187,
+                            //'Content-Length' => 187, #被腾讯的文档坑惨了
                             'Content-Type'   => 'application/json'
                         ],
                         'json' => [
@@ -61,6 +61,6 @@ class AppController extends Controller
             $text .= $result['itemstring'].'<br>';
         }
 
-        return response()->json(['text'=>'success']);
+        return response()->json(['text'=>$text]);
     }
 }
