@@ -53,13 +53,11 @@ class AppController extends Controller
 
         $res = json_decode((string) $response->getBody(), true);
         $results = $res['data']['items'];
-        $text = '';
 
-
-        foreach($results as $result) {
-            $text .= $result['itemstring'].'<br>';
+        if($res['code'] != 0) {
+            return response()->json(['status'=>0, 'msg'=>'图片识别失败！']);
         }
 
-        return response()->json(['text'=>$text]);
+        return response()->json(['status'=>1, 'results'=>$results]);
     }
 }
