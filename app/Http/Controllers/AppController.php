@@ -45,9 +45,8 @@ class AppController extends Controller
 
     public function requestBdApi($access_token) {
         $http = new Client; 
-        $image = base64_encode(file_get_contents('http://www.limepietech.com/public/images/upload/N74uKHJrvB5lVAKJzbmG8fI5vqr62aaRDuu1G6AP.jpeg'));
 
-        $response = $http->request('POST', 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token='.$access_token, [
+        $response = $http->request('POST', 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic', [
                         'headers' => [
                             //'Host'=>'recognition.image.myqcloud.com',
                             //'Authorization'  => $signStr,
@@ -55,16 +54,27 @@ class AppController extends Controller
                             'Content-Type'   => 'application/x-www-form-urlencoded'
                         ],
                         'form_params' => [
-                            'image' => $image
+                            'access_token'=>$access_token,
+                            'url' => 'http://www.limepietech.com/public/images/upload/N74uKHJrvB5lVAKJzbmG8fI5vqr62aaRDuu1G6AP.jpeg',
+                            'detect_direction' => 'true',
+                            'probability' => 'true'
                         ],
                         'verify' => false
                     ]);
 
         $res = json_decode((string) $response->getBody(), true);
+        $words_result = $res['words_result'];
+        $results = [];
 
-        var_dump($res);
+        foreach($words_result as $result) {
+           array_push($results, $result['words']);
+        }
+
+        return response()->json(['status'=>1, 'results'=>$results]);
+
     }
 
+    //腾讯的文字识别接口
     public function recognizeTencent(Request $request) {
         //$rec_type = $request->rec_type;
         $path = $request->path;
