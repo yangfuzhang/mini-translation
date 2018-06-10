@@ -17,6 +17,55 @@ class AppController extends Controller
     }
 
     public function recognize(Request $request) {
+        $client_id = 'IGpdCaDx14qf8lWfWG00FHwc';
+        $client_secret = 'pyeGLISkbeQyjUotB2bmHTtw5c8kqfqp';
+
+        $http = new Client; 
+
+        $response = $http->request('POST', 'https://aip.baidubce.com/oauth/2.0/token', [
+                        'headers' => [
+                            //'Host'=>'recognition.image.myqcloud.com',
+                            //'Authorization'  => $signStr,
+                            //'Content-Length' => 187, #被腾讯的文档坑惨了
+                            'Content-Type'   => 'application/json'
+                        ],
+                        'form_params' => [
+                            'grant_type'  => 'client_credentials',
+                            'client_id' => $client_id,
+                            'client_secret'    => $client_secret
+                        ],
+                        'verify' => false
+                    ]);
+
+        $res = json_decode((string) $response->getBody(), true);
+        $access_token = $res['access_token'];
+
+        $this->requestBdApi($access_token);
+    }
+
+    public function requestBdApi($access_token) {
+        $http = new Client; 
+        $image = base64_encode(file_get_contents('http://www.limepietech.com/public/images/upload/N74uKHJrvB5lVAKJzbmG8fI5vqr62aaRDuu1G6AP.jpeg'));
+
+        $response = $http->request('POST', 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token='.$access_token, [
+                        'headers' => [
+                            //'Host'=>'recognition.image.myqcloud.com',
+                            //'Authorization'  => $signStr,
+                            //'Content-Length' => 187, #被腾讯的文档坑惨了
+                            'Content-Type'   => 'application/x-www-form-urlencoded'
+                        ],
+                        'form_params' => [
+                            'image' => $image
+                        ],
+                        'verify' => false
+                    ]);
+
+        $res = json_decode((string) $response->getBody(), true);
+
+        var_dump($res);
+    }
+
+    public function recognizeTencent(Request $request) {
         //$rec_type = $request->rec_type;
         $path = $request->path;
 
