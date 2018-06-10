@@ -55,7 +55,7 @@ class AppController extends Controller
         $results = $res['data']['items'];
 
         if($res['code'] != 0) {
-            return response()->json(['status'=>0, 'msg'=>'图片识别失败！']);
+            return response()->json(['status'=>0, 'msg'=>'图片识别失败！', 'code'=>$res['code']]);
         }
 
         return response()->json(['status'=>1, 'results'=>$results]);
