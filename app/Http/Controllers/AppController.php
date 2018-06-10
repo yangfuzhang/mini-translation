@@ -17,6 +17,7 @@ class AppController extends Controller
     }
 
     public function recognize(Request $request) {
+        $path = $request->path;
         $client_id = 'IGpdCaDx14qf8lWfWG00FHwc';
         $client_secret = 'pyeGLISkbeQyjUotB2bmHTtw5c8kqfqp';
 
@@ -40,7 +41,7 @@ class AppController extends Controller
         $res = json_decode((string) $response->getBody(), true);
         $access_token = $res['access_token'];
 
-        $this->requestBdApi($access_token);
+        $this->requestBdApi($access_token, $path);
     }
 
     public function requestBdApi($access_token) {
@@ -55,7 +56,7 @@ class AppController extends Controller
                         ],
                         'form_params' => [
                             'access_token'=>$access_token,
-                            'url' => 'http://www.limepietech.com/public/images/upload/N74uKHJrvB5lVAKJzbmG8fI5vqr62aaRDuu1G6AP.jpeg',
+                            'url' => $path,
                             'detect_direction' => 'true',
                             'probability' => 'true'
                         ],
