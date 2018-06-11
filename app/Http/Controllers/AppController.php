@@ -18,6 +18,7 @@ class AppController extends Controller
 
     public function recognize(Request $request) {
         $path = $request->path;
+        $rec_type = $request->rec_type;
         $client_id = 'IGpdCaDx14qf8lWfWG00FHwc';
         $client_secret = 'pyeGLISkbeQyjUotB2bmHTtw5c8kqfqp';
 
@@ -41,19 +42,28 @@ class AppController extends Controller
         $res = json_decode((string) $response->getBody(), true);
         $access_token = $res['access_token'];
 
-        $results = $this->requestBdApi($access_token, $path);
+        $results = $this->requestBdApi($access_token, $path, $rec_type);
 
         return response()->json(['status'=>1, 'results'=>$results]);
     }
 
-    public function requestBdApi($access_token, $path) {
-        $http = new Client; 
+    public function requestBdApi($access_token, $path, $rec_type) {
+        $http = new Client;
 
-        $response = $http->request('POST', 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic', [
+        switch($rec_type) {
+            case 'print':
+                $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic';
+                break;
+            case 'webimage':
+                $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/webimage';
+                break;
+            default:
+                break;
+        }
+
+
+        $response = $http->request('POST', $api_url, [
                         'headers' => [
-                            //'Host'=>'recognition.image.myqcloud.com',
-                            //'Authorization'  => $signStr,
-                            //'Content-Length' => 187, #被腾讯的文档坑惨了
                             'Content-Type'   => 'application/x-www-form-urlencoded'
                         ],
                         'form_params' => [
