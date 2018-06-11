@@ -41,7 +41,9 @@ class AppController extends Controller
         $res = json_decode((string) $response->getBody(), true);
         $access_token = $res['access_token'];
 
-        $this->requestBdApi($access_token, $path);
+        $results = $this->requestBdApi($access_token, $path);
+
+        return response()->json(['status'=>1, 'results'=>$results]);
     }
 
     public function requestBdApi($access_token, $path) {
@@ -71,10 +73,9 @@ class AppController extends Controller
            array_push($results, $result['words']);
         }
 
-        var_dump($results);
-
-        return response()->json(['status'=>1, 'results'=>$results]);
-
+        return $results;
+        //var_dump($words_result);
+        //var_dump($results);
     }
 
     //腾讯的文字识别接口
