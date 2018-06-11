@@ -56,7 +56,7 @@ class AppController extends Controller
                         ],
                         'form_params' => [
                             'access_token'=>$access_token,
-                            'url' => $path,
+                            'url' => 'https://www.limepietech.com/public/images/upload/SUpKcCgvOzRFbldd1fvzK3KjP0ICp9zS8ekcfArj.jpeg',
                             'detect_direction' => 'true',
                             'probability' => 'true'
                         ],
@@ -70,6 +70,8 @@ class AppController extends Controller
         foreach($words_result as $result) {
            array_push($results, $result['words']);
         }
+
+        var_dump($results);
 
         return response()->json(['status'=>1, 'results'=>$results]);
 
