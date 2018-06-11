@@ -58,7 +58,7 @@ class AppController extends Controller
                         ],
                         'form_params' => [
                             'access_token'=>$access_token,
-                            'url' => 'https://www.limepietech.com/public/images/upload/SUpKcCgvOzRFbldd1fvzK3KjP0ICp9zS8ekcfArj.jpeg',
+                            'url' => $path,
                             'detect_direction' => 'true',
                             'probability' => 'true'
                         ],
