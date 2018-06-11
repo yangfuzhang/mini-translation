@@ -8,7 +8,6 @@ use Storage;
 
 class AppController extends Controller
 {
-    
     public function upload(Request $request) {
         $image_path = $request->file('rec_image')->store('upload');
 
@@ -44,7 +43,7 @@ class AppController extends Controller
 
         $results = $this->requestBdApi($access_token, $path, $rec_type);
 
-        return response()->json(['status'=>1, 'results'=>$results]);
+        return response()->json(['results'=>$results]);
     }
 
     public function requestBdApi($access_token, $path, $rec_type) {
@@ -84,11 +83,9 @@ class AppController extends Controller
         }
 
         return $results;
-        //var_dump($words_result);
-        //var_dump($results);
     }
 
-    //腾讯的文字识别接口
+    //腾讯的文字识别接口,暂时没有使用
     public function recognizeTencent(Request $request) {
         //$rec_type = $request->rec_type;
         $path = $request->path;
