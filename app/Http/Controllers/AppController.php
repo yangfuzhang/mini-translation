@@ -44,7 +44,7 @@ class AppController extends Controller
         $this->requestBdApi($access_token, $path);
     }
 
-    public function requestBdApi($access_token) {
+    public function requestBdApi($access_token, $path) {
         $http = new Client; 
 
         $response = $http->request('POST', 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic', [
