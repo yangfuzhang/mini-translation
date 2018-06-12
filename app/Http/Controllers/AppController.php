@@ -103,7 +103,7 @@ class AppController extends Controller
 
             return $results;
         } else {
-            return fales;
+            return false;
         } 
     }
 
@@ -134,7 +134,7 @@ class AppController extends Controller
 
             return $results;
         } else {
-            return fales;
+            return false;
         }
     }
 
