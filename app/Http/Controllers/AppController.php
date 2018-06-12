@@ -119,12 +119,7 @@ class AppController extends Controller
                     ]);
 
         $res = json_decode((string) $response->getBody(), true);
-        $words_result = $res['words_result'];
-        $results = [];
-
-        foreach($words_result as $result) {
-           array_push($results, $result);
-        }
+        $results = $res['words_result'];
 
         return $results;
     }
