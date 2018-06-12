@@ -71,7 +71,7 @@ class AppController extends Controller
         if(!$results) {
             return response()->json(['error'=>1]);
         } else {
-            print_r($results);
+            //print_r($results);
             return response()->json(['results'=>$results]);
         }  
     }
@@ -94,6 +94,7 @@ class AppController extends Controller
 
         $res = json_decode((string) $response->getBody(), true);
 
+        //验证接口是否返回错误消息
         if(!isset($res['error_code'])) {
             $words_result = $res['words_result'];
             $results = [];
@@ -131,10 +132,11 @@ class AppController extends Controller
         
 
         if(!isset($res['error_code']))  {
-            if($id_card_side === 'front') {
-                $words_result = $res['words_result'];
-                $results = [];
+            //正面和反面返回的数据不一样
+            $words_result = $res['words_result'];
+            $results = [];
 
+            if($id_card_side === 'front') {
                 $results['姓名'] = isset($words_result['姓名']) ? $words_result['姓名']['words']:'未识别';
                 $results['性别'] = isset($words_result['性别']) ? $words_result['性别']['words']:'未识别';
                 $results['民族'] = isset($words_result['民族']) ? $words_result['民族']['words']:'未识别';
@@ -145,7 +147,11 @@ class AppController extends Controller
                 return $results;
             }
 
-            return $res;
+            $results['签发机关'] = isset($words_result['签发机关']) ? $words_result['签发机关']['words']:'未识别';
+            $results['签发日期'] = isset($words_result['签发日期']) ? $words_result['签发日期']['words']:'未识别';
+            $results['失效日期'] = isset($words_result['失效日期']) ? $words_result['失效日期']['words']:'未识别';
+
+            return $results;
             
         } else {
             return false;
