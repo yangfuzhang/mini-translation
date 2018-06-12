@@ -92,9 +92,9 @@ class AppController extends Controller
         //$words_result = $res['words_result'];
         //$results = [];
 
-        foreach($words_result as $result) {
-           array_push($results, $result['words']);
-        }
+        // foreach($words_result as $result) {
+        //    array_push($results, $result['words']);
+        // }
 
         return $res;
 
