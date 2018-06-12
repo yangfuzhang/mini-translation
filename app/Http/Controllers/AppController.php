@@ -18,6 +18,8 @@ class AppController extends Controller
     public function recognize(Request $request) {
         $path = $request->path;
         $rec_type = $request->rec_type;
+        $id_card_side = $request->id_card_side;
+
         $client_id = 'IGpdCaDx14qf8lWfWG00FHwc';
         $client_secret = 'pyeGLISkbeQyjUotB2bmHTtw5c8kqfqp';
 
@@ -41,25 +43,37 @@ class AppController extends Controller
         $res = json_decode((string) $response->getBody(), true);
         $access_token = $res['access_token'];
 
-        $results = $this->requestBdApi($access_token, $path, $rec_type);
-
-        return response()->json(['results'=>$results]);
-    }
-
-    public function requestBdApi($access_token, $path, $rec_type) {
-        $http = new Client;
-
         switch($rec_type) {
-            case 'print':
+            //通用文字识别
+            case 'general':
                 $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic';
+                $results = $this->requestGeneralApi($api_url, $access_token, $path);
                 break;
+            //网络图片识别
             case 'webimage':
                 $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/webimage';
+                $results = $this->requestGeneralApi($api_url, $access_token, $path);
+                break;
+            //身份证识别
+            case 'idcard':
+                $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/idcard';
+                $results = $this->requestIdcardApi($api_url, $access_token, $path, $id_card_side);
+                break;
+            //银行卡识别
+            case 'bankcard':
+                $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/bankcard';
+                $results = $this->requestBankcardApi($api_url, $access_token, $path);
                 break;
             default:
                 break;
         }
+        print_r($results);
 
+        return response()->json(['results'=>$results]);
+    }
+
+    public function requestGeneralApi($access_token, $path, $rec_type) {
+        $http = new Client;
 
         $response = $http->request('POST', $api_url, [
                         'headers' => [
@@ -83,6 +97,35 @@ class AppController extends Controller
         }
 
         return $results;
+    }
+
+    public function requestIdcardApi($api_url, $access_token, $path, $id_card_side) {
+        $http = new Client;
+        //$image = file_get_contents("https://www.limepietech.com/public/images/upload/GyMH265WqptKQNNcjum0KdOTqHBddIeFPLxMV8u1.jpeg");
+        $image = file_get_contents($path);
+        $image = base64_encode($image);
+
+        $response = $http->request('POST', $api_url, [
+                        'headers' => [
+                            'Content-Type'   => 'application/x-www-form-urlencoded'
+                        ],
+                        'form_params' => [
+                            'access_token'=>$access_token,
+                            'detect_direction' => 'true',
+                            'image' => $image,
+                            'id_card_side' => $id_card_side
+                        ],
+                        'verify' => false
+                    ]);
+
+        $res = json_decode((string) $response->getBody(), true);
+        $results = $res['words_result'];
+
+        return $results;
+    }
+
+    public function requestBankcardApi($api_url, $access_token, $path, $rec_type) {
+
     }
 
     //腾讯的文字识别接口,暂时没有使用
