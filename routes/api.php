@@ -13,5 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('recognize', 'AppController@recognize');
+Route::get('recognize', 'AppController@recognize');//测试用
+Route::post('recognize', 'AppController@recognize');//线上用
 Route::post('/upload', 'AppController@upload');
