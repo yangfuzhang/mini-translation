@@ -138,7 +138,7 @@ class AppController extends Controller
             $results['民族'] = isset($words_result['民族']) ? $words_result['民族']['words']:'未识别';
             $results['出生'] = isset($words_result['出生']) ? $words_result['出生']['words']:'未识别';
             $results['住址'] = isset($words_result['住址']) ? $words_result['住址']['words']:'未识别';
-            $results['公民身份号码'] = isset($results['公民身份号码']) ? $results['公民身份号码']['words']:'未识别';
+            $results['公民身份号码'] = isset($words_result['公民身份号码']) ? $results['公民身份号码']['words']:'未识别';
 
             return $results;
         } else {
