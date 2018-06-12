@@ -133,12 +133,12 @@ class AppController extends Controller
             $words_result = $res['words_result'];
             $results = [];
 
-            $results['姓名'] = isset($results['姓名']) ? $results['姓名']:'未识别';
-            $results['性别'] = isset($results['性别']) ? $results['性别']:'未识别';
-            $results['民族'] = isset($results['民族']) ? $results['民族']:'未识别';
-            $results['出生'] = isset($results['出生']) ? $results['出生']:'未识别';
-            $results['住址'] = isset($results['住址']) ? $results['住址']:'未识别';
-            $results['公民身份号码'] = isset($results['公民身份号码']) ? $results['公民身份号码']:'未识别';
+            $results['姓名'] = isset($words_result['姓名']) ? $words_result['姓名']['words']:'未识别';
+            $results['性别'] = isset($words_result['性别']) ? $words_result['性别']['words']:'未识别';
+            $results['民族'] = isset($words_result['民族']) ? $words_result['民族']['words']:'未识别';
+            $results['出生'] = isset($words_result['出生']) ? $words_result['出生']['words']:'未识别';
+            $results['住址'] = isset($words_result['住址']) ? $words_result['住址']['words']:'未识别';
+            $results['公民身份号码'] = isset($results['公民身份号码']) ? $results['公民身份号码']['words']:'未识别';
 
             return $results;
         } else {
