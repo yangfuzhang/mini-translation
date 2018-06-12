@@ -129,8 +129,16 @@ class AppController extends Controller
         $res = json_decode((string) $response->getBody(), true);
         
 
-        if(!$res['error_code']) {
-            $results = $res['words_result'];
+        if(!isset($res['error_code']))  {
+            $words_result = $res['words_result'];
+            $results = [];
+
+            $results['姓名'] = isset($results['姓名']) ? $results['姓名']:'未识别';
+            $results['性别'] = isset($results['性别']) ? $results['性别']:'未识别';
+            $results['民族'] = isset($results['民族']) ? $results['民族']:'未识别';
+            $results['出生'] = isset($results['出生']) ? $results['出生']:'未识别';
+            $results['住址'] = isset($results['住址']) ? $results['住址']:'未识别';
+            $results['公民身份号码'] = isset($results['公民身份号码']) ? $results['公民身份号码']:'未识别';
 
             return $results;
         } else {
