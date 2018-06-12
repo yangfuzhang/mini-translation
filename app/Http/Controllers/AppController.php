@@ -72,7 +72,7 @@ class AppController extends Controller
         return response()->json(['results'=>$results]);
     }
 
-    public function requestGeneralApi($access_token, $path, $rec_type) {
+    public function requestGeneralApi($api_url,$access_token, $path) {
         $http = new Client;
 
         $response = $http->request('POST', $api_url, [
