@@ -45,7 +45,7 @@ class AppController extends Controller
 
         switch($rec_type) {
             //通用文字识别
-            case 'general':
+            case 'print':
                 $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic';
                 $results = $this->requestGeneralApi($api_url, $access_token, $path);
                 break;
