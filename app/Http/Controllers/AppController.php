@@ -67,9 +67,12 @@ class AppController extends Controller
             default:
                 break;
         }
-        print_r($results);
-
-        return response()->json(['results'=>$results]);
+        
+        if(!$results) {
+            return response()->json(['error'=>1]);
+        } else {
+            return response()->json(['results'=>$results]);
+        }  
     }
 
     public function requestGeneralApi($api_url,$access_token, $path) {
@@ -89,16 +92,19 @@ class AppController extends Controller
                     ]);
 
         $res = json_decode((string) $response->getBody(), true);
-        //$words_result = $res['words_result'];
-        //$results = [];
 
-        // foreach($words_result as $result) {
-        //    array_push($results, $result['words']);
-        // }
+        if(!$res['error_code']) {
+            $words_result = $res['words_result'];
+            $results = [];
 
-        return $res;
+            foreach($words_result as $result) {
+               array_push($results, $result['words']);
+            }
 
-        //return $results;
+            return $results;
+        } else {
+            return fales;
+        } 
     }
 
     public function requestIdcardApi($api_url, $access_token, $path, $id_card_side) {
@@ -121,9 +127,15 @@ class AppController extends Controller
                     ]);
 
         $res = json_decode((string) $response->getBody(), true);
-        $results = $res['words_result'];
+        
 
-        return $results;
+        if(!$res['error_code']) {
+            $results = $res['words_result'];
+
+            return $results;
+        } else {
+            return fales;
+        }
     }
 
     public function requestBankcardApi($api_url, $access_token, $path, $rec_type) {
