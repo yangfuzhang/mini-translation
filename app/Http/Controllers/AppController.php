@@ -93,7 +93,7 @@ class AppController extends Controller
 
         $res = json_decode((string) $response->getBody(), true);
 
-        if(!isset($res['error_code']) {
+        if(!isset($res['error_code'])) {
             $words_result = $res['words_result'];
             $results = [];
 
