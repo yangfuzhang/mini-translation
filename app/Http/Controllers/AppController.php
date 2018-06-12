@@ -89,14 +89,16 @@ class AppController extends Controller
                     ]);
 
         $res = json_decode((string) $response->getBody(), true);
-        $words_result = $res['words_result'];
-        $results = [];
+        //$words_result = $res['words_result'];
+        //$results = [];
 
         foreach($words_result as $result) {
            array_push($results, $result['words']);
         }
 
-        return $results;
+        return $res;
+
+        //return $results;
     }
 
     public function requestIdcardApi($api_url, $access_token, $path, $id_card_side) {
