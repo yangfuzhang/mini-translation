@@ -67,7 +67,7 @@ class AppController extends Controller
             default:
                 break;
         }
-        //print_r($results);
+        print_r($results);
 
         return response()->json(['results'=>$results]);
     }
