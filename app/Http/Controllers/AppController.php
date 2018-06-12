@@ -131,17 +131,22 @@ class AppController extends Controller
         
 
         if(!isset($res['error_code']))  {
-            $words_result = $res['words_result'];
-            $results = [];
+            if($id_card_side === 'front') {
+                $words_result = $res['words_result'];
+                $results = [];
 
-            $results['姓名'] = isset($words_result['姓名']) ? $words_result['姓名']['words']:'未识别';
-            $results['性别'] = isset($words_result['性别']) ? $words_result['性别']['words']:'未识别';
-            $results['民族'] = isset($words_result['民族']) ? $words_result['民族']['words']:'未识别';
-            $results['出生'] = isset($words_result['出生']) ? $words_result['出生']['words']:'未识别';
-            $results['住址'] = isset($words_result['住址']) ? $words_result['住址']['words']:'未识别';
-            $results['公民身份号码'] = isset($words_result['公民身份号码']) ? $words_result['公民身份号码']['words']:'未识别';
+                $results['姓名'] = isset($words_result['姓名']) ? $words_result['姓名']['words']:'未识别';
+                $results['性别'] = isset($words_result['性别']) ? $words_result['性别']['words']:'未识别';
+                $results['民族'] = isset($words_result['民族']) ? $words_result['民族']['words']:'未识别';
+                $results['出生'] = isset($words_result['出生']) ? $words_result['出生']['words']:'未识别';
+                $results['住址'] = isset($words_result['住址']) ? $words_result['住址']['words']:'未识别';
+                $results['公民身份号码'] = isset($words_result['公民身份号码']) ? $words_result['公民身份号码']['words']:'未识别';
 
-            return $results;
+                return $results;
+            }
+
+            return $res;
+            
         } else {
             return false;
         }
