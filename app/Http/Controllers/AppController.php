@@ -75,7 +75,7 @@ class AppController extends Controller
         if(!$results) {
             return response()->json(['error'=>1]);
         } else {
-            print_r($results);
+            //print_r($results);
             return response()->json(['results'=>$results]);
         }  
     }
