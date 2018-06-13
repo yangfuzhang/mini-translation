@@ -49,6 +49,10 @@ class AppController extends Controller
                 $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic';
                 $results = $this->requestGeneralApi($api_url, $access_token, $path);
                 break;
+            case 'general':
+                $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic';
+                $results = $this->requestGeneralApi($api_url, $access_token, $path);
+                break;
             //网络图片识别
             case 'webimage':
                 $api_url =  'https://aip.baidubce.com/rest/2.0/ocr/v1/webimage';
