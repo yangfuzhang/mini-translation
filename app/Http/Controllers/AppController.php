@@ -75,7 +75,7 @@ class AppController extends Controller
         if(!$results) {
             return response()->json(['error'=>1]);
         } else {
-            //print_r($results);
+            print_r($results);
             return response()->json(['results'=>$results]);
         }  
     }
@@ -162,8 +162,39 @@ class AppController extends Controller
         }
     }
 
-    public function requestBankcardApi($api_url, $access_token, $path, $rec_type) {
+    public function requestBankcardApi($api_url, $access_token, $path) {
+        $http = new Client;
+        //$image = file_get_contents("https://www.limepietech.com/public/images/upload/Wyu2gHzyrsObSEo1BXlK4tJNdEIgW8ZO9y6Bblaw.png");
+        $image = file_get_contents($path);
+        $image = base64_encode($image);
 
+        $response = $http->request('POST', $api_url, [
+                        'headers' => [
+                            'Content-Type'   => 'application/x-www-form-urlencoded'
+                        ],
+                        'form_params' => [
+                            'access_token'=>$access_token,
+                            'detect_direction' => 'true',
+                            'image' => $image
+                        ],
+                        'verify' => false
+                    ]);
+
+        $res = json_decode((string) $response->getBody(), true);
+        
+
+        if(!isset($res['error_code']))  {
+            $results = $res['result'];
+            $result = [];
+
+            $result['bank_card_number'] = isset($results['bank_card_number']) ? $results['bank_card_number'] : '未识别';
+            $result['bank_name'] = isset($results['bank_name']) ? $results['bank_name'] : '未识别';
+            $result['bank_card_type'] = isset($results['bank_card_type']) ? $results['bank_card_type'] : '未识别';
+
+            return $result;
+        } else {
+            return false;
+        }
     }
 
     //腾讯的文字识别接口,暂时没有使用
