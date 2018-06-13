@@ -141,19 +141,19 @@ class AppController extends Controller
             $results = [];
 
             if($id_card_side === 'front') {
-                $results['姓名'] = isset($words_result['姓名']) ? $words_result['姓名']['words']:'未识别';
-                $results['性别'] = isset($words_result['性别']) ? $words_result['性别']['words']:'未识别';
-                $results['民族'] = isset($words_result['民族']) ? $words_result['民族']['words']:'未识别';
-                $results['出生'] = isset($words_result['出生']) ? $words_result['出生']['words']:'未识别';
+                $results['姓名'] = isset($words_result['姓名']) ? $words_result['姓名']['words']:'无法识别';
+                $results['性别'] = isset($words_result['性别']) ? $words_result['性别']['words']:'无法识别';
+                $results['民族'] = isset($words_result['民族']) ? $words_result['民族']['words']:'无法识别';
+                $results['出生'] = isset($words_result['出生']) ? $words_result['出生']['words']:'无法识别';
                 $results['住址'] = isset($words_result['住址']) ? $words_result['住址']['words']:'未识别';
-                $results['公民身份号码'] = isset($words_result['公民身份号码']) ? $words_result['公民身份号码']['words']:'未识别';
+                $results['公民身份号码'] = isset($words_result['公民身份号码']) ? $words_result['公民身份号码']['words']:'无法识别';
 
                 return $results;
             }
 
-            $results['签发机关'] = isset($words_result['签发机关']) ? $words_result['签发机关']['words']:'未识别';
-            $results['签发日期'] = isset($words_result['签发日期']) ? $words_result['签发日期']['words']:'未识别';
-            $results['失效日期'] = isset($words_result['失效日期']) ? $words_result['失效日期']['words']:'未识别';
+            $results['签发机关'] = isset($words_result['签发机关']) ? $words_result['签发机关']['words']:'无法识别';
+            $results['签发日期'] = isset($words_result['签发日期']) ? $words_result['签发日期']['words']:'无法识别';
+            $results['失效日期'] = isset($words_result['失效日期']) ? $words_result['失效日期']['words']:'无法识别';
 
             return $results;
             
@@ -187,9 +187,25 @@ class AppController extends Controller
             $results = $res['result'];
             $result = [];
 
-            $result['bank_card_number'] = isset($results['bank_card_number']) ? $results['bank_card_number'] : '未识别';
-            $result['bank_name'] = isset($results['bank_name']) ? $results['bank_name'] : '未识别';
-            $result['bank_card_type'] = isset($results['bank_card_type']) ? $results['bank_card_type'] : '未识别';
+            $result['bank_card_number'] = isset($results['bank_card_number']) ? $results['bank_card_number'] : '无法识别';
+            $result['bank_name'] = isset($results['bank_name']) ? $results['bank_name'] : '无法识别';
+            if(isset($results['bank_card_type'])) {
+                switch($results['bank_card_type']) {
+                    case 0:
+                        $result['bank_card_type'] = '无法识别';
+                        break;
+                    case 1:
+                        $result['bank_card_type'] = '借记卡';
+                        break;
+                    case 2:
+                        $result['bank_card_type'] = '信用卡';
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                $result['bank_card_type'] = '无法识别';
+            }
 
             return $result;
         } else {
