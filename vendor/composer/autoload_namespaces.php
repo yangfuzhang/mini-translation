@@ -14,6 +14,5 @@ return array(
     'JakubOnderka\\PhpConsoleColor' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
     'FFMpeg' => array($vendorDir . '/php-ffmpeg/php-ffmpeg/src'),
     'Evenement' => array($vendorDir . '/evenement/evenement/src'),
-    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Alchemy' => array($vendorDir . '/alchemy/binary-driver/src'),
 );

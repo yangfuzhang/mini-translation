@@ -11,10 +11,20 @@
 
 namespace Symfony\Component\HttpFoundation\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class JsonResponseTest extends \PHPUnit_Framework_TestCase
+class JsonResponseTest extends TestCase
 {
+    protected function setUp()
+    {
+        parent::setUp();
+
+        if (!defined('HHVM_VERSION')) {
+            $this->iniSet('serialize_precision', 14);
+        }
+    }
+
     public function testConstructorEmptyCreatesJsonObject()
     {
         $response = new JsonResponse();
@@ -227,6 +237,10 @@ class JsonResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetContentJsonSerializeError()
     {
+        if (!interface_exists('JsonSerializable', false)) {
+            $this->markTestSkipped('JsonSerializable is required.');
+        }
+
         $serializable = new JsonSerializableObject();
 
         JsonResponse::create($serializable);
@@ -241,7 +255,7 @@ class JsonResponseTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-if (interface_exists('JsonSerializable')) {
+if (interface_exists('JsonSerializable', false)) {
     class JsonSerializableObject implements \JsonSerializable
     {
         public function jsonSerialize()
