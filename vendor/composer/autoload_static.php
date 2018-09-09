@@ -9,6 +9,7 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -48,6 +49,7 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
@@ -56,6 +58,7 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
+            'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
@@ -105,6 +108,7 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Cache\\' => 22,
             'Defuse\\Crypto\\' => 14,
             'DeepCopy\\' => 9,
         ),
@@ -158,6 +162,10 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
@@ -189,6 +197,10 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
+        'Symfony\\Component\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/filesystem',
         ),
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
@@ -290,6 +302,10 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
         'Defuse\\Crypto\\' => 
         array (
             0 => __DIR__ . '/..' . '/defuse/php-encryption/src',
@@ -324,6 +340,13 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
                 0 => __DIR__ . '/..' . '/erusev/parsedown',
             ),
         ),
+        'N' => 
+        array (
+            'Neutron' => 
+            array (
+                0 => __DIR__ . '/..' . '/neutron/temporary-filesystem/src',
+            ),
+        ),
         'M' => 
         array (
             'Mockery' => 
@@ -342,6 +365,20 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
             ),
         ),
+        'F' => 
+        array (
+            'FFMpeg' => 
+            array (
+                0 => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src',
+            ),
+        ),
+        'E' => 
+        array (
+            'Evenement' => 
+            array (
+                0 => __DIR__ . '/..' . '/evenement/evenement/src',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 
@@ -349,9 +386,35 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
             ),
         ),
+        'A' => 
+        array (
+            'Alchemy' => 
+            array (
+                0 => __DIR__ . '/..' . '/alchemy/binary-driver/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
+        'Alchemy\\BinaryDriver\\AbstractBinary' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/AbstractBinary.php',
+        'Alchemy\\BinaryDriver\\BinaryDriverTestCase' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/BinaryDriverTestCase.php',
+        'Alchemy\\BinaryDriver\\BinaryInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/BinaryInterface.php',
+        'Alchemy\\BinaryDriver\\Configuration' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/Configuration.php',
+        'Alchemy\\BinaryDriver\\ConfigurationAwareInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/ConfigurationAwareInterface.php',
+        'Alchemy\\BinaryDriver\\ConfigurationInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/ConfigurationInterface.php',
+        'Alchemy\\BinaryDriver\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/Exception/ExceptionInterface.php',
+        'Alchemy\\BinaryDriver\\Exception\\ExecutableNotFoundException' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/Exception/ExecutableNotFoundException.php',
+        'Alchemy\\BinaryDriver\\Exception\\ExecutionFailureException' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/Exception/ExecutionFailureException.php',
+        'Alchemy\\BinaryDriver\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/Exception/InvalidArgumentException.php',
+        'Alchemy\\BinaryDriver\\Listeners\\DebugListener' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/Listeners/DebugListener.php',
+        'Alchemy\\BinaryDriver\\Listeners\\ListenerInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/Listeners/ListenerInterface.php',
+        'Alchemy\\BinaryDriver\\Listeners\\Listeners' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/Listeners/Listeners.php',
+        'Alchemy\\BinaryDriver\\ProcessBuilderFactory' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/ProcessBuilderFactory.php',
+        'Alchemy\\BinaryDriver\\ProcessBuilderFactoryAwareInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/ProcessBuilderFactoryAwareInterface.php',
+        'Alchemy\\BinaryDriver\\ProcessBuilderFactoryInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/ProcessBuilderFactoryInterface.php',
+        'Alchemy\\BinaryDriver\\ProcessRunner' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/ProcessRunner.php',
+        'Alchemy\\BinaryDriver\\ProcessRunnerAwareInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/ProcessRunnerAwareInterface.php',
+        'Alchemy\\BinaryDriver\\ProcessRunnerInterface' => __DIR__ . '/..' . '/alchemy/binary-driver/src/Alchemy/BinaryDriver/ProcessRunnerInterface.php',
         'App\\Console\\Commands\\Swoole' => __DIR__ . '/../..' . '/app/Console/Commands/Swoole.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -424,6 +487,32 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         'Defuse\\Crypto\\KeyOrPassword' => __DIR__ . '/..' . '/defuse/php-encryption/src/KeyOrPassword.php',
         'Defuse\\Crypto\\KeyProtectedByPassword' => __DIR__ . '/..' . '/defuse/php-encryption/src/KeyProtectedByPassword.php',
         'Defuse\\Crypto\\RuntimeTests' => __DIR__ . '/..' . '/defuse/php-encryption/src/RuntimeTests.php',
+        'Doctrine\\Common\\Cache\\ApcCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php',
+        'Doctrine\\Common\\Cache\\ApcuCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ApcuCache.php',
+        'Doctrine\\Common\\Cache\\ArrayCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ArrayCache.php',
+        'Doctrine\\Common\\Cache\\Cache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Cache.php',
+        'Doctrine\\Common\\Cache\\CacheProvider' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php',
+        'Doctrine\\Common\\Cache\\ChainCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ChainCache.php',
+        'Doctrine\\Common\\Cache\\ClearableCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ClearableCache.php',
+        'Doctrine\\Common\\Cache\\CouchbaseCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CouchbaseCache.php',
+        'Doctrine\\Common\\Cache\\FileCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php',
+        'Doctrine\\Common\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php',
+        'Doctrine\\Common\\Cache\\FlushableCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FlushableCache.php',
+        'Doctrine\\Common\\Cache\\MemcacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php',
+        'Doctrine\\Common\\Cache\\MemcachedCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php',
+        'Doctrine\\Common\\Cache\\MongoDBCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MongoDBCache.php',
+        'Doctrine\\Common\\Cache\\MultiGetCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiGetCache.php',
+        'Doctrine\\Common\\Cache\\MultiPutCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiPutCache.php',
+        'Doctrine\\Common\\Cache\\PhpFileCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php',
+        'Doctrine\\Common\\Cache\\PredisCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php',
+        'Doctrine\\Common\\Cache\\RedisCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php',
+        'Doctrine\\Common\\Cache\\RiakCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/RiakCache.php',
+        'Doctrine\\Common\\Cache\\SQLite3Cache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php',
+        'Doctrine\\Common\\Cache\\Version' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Version.php',
+        'Doctrine\\Common\\Cache\\VoidCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/VoidCache.php',
+        'Doctrine\\Common\\Cache\\WinCacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/WinCacheCache.php',
+        'Doctrine\\Common\\Cache\\XcacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/XcacheCache.php',
+        'Doctrine\\Common\\Cache\\ZendDataCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ZendDataCache.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
         'Doctrine\\Instantiator\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',
@@ -438,6 +527,95 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         'Dotenv\\Exception\\ValidationException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
         'Dotenv\\Loader' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Loader.php',
         'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
+        'Evenement\\EventEmitter' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitter.php',
+        'Evenement\\EventEmitterInterface' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitterInterface.php',
+        'Evenement\\EventEmitterTrait' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitterTrait.php',
+        'FFMpeg\\Coordinate\\AspectRatio' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Coordinate/AspectRatio.php',
+        'FFMpeg\\Coordinate\\Dimension' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Coordinate/Dimension.php',
+        'FFMpeg\\Coordinate\\FrameRate' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Coordinate/FrameRate.php',
+        'FFMpeg\\Coordinate\\Point' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Coordinate/Point.php',
+        'FFMpeg\\Coordinate\\TimeCode' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Coordinate/TimeCode.php',
+        'FFMpeg\\Driver\\FFMpegDriver' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Driver/FFMpegDriver.php',
+        'FFMpeg\\Driver\\FFProbeDriver' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Driver/FFProbeDriver.php',
+        'FFMpeg\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Exception/ExceptionInterface.php',
+        'FFMpeg\\Exception\\ExecutableNotFoundException' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Exception/ExecutableNotFoundException.php',
+        'FFMpeg\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Exception/InvalidArgumentException.php',
+        'FFMpeg\\Exception\\LogicException' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Exception/LogicException.php',
+        'FFMpeg\\Exception\\RuntimeException' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Exception/RuntimeException.php',
+        'FFMpeg\\FFMpeg' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFMpeg.php',
+        'FFMpeg\\FFMpegServiceProvider' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFMpegServiceProvider.php',
+        'FFMpeg\\FFProbe' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe.php',
+        'FFMpeg\\FFProbe\\DataMapping\\AbstractData' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/DataMapping/AbstractData.php',
+        'FFMpeg\\FFProbe\\DataMapping\\Format' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/DataMapping/Format.php',
+        'FFMpeg\\FFProbe\\DataMapping\\Stream' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/DataMapping/Stream.php',
+        'FFMpeg\\FFProbe\\DataMapping\\StreamCollection' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/DataMapping/StreamCollection.php',
+        'FFMpeg\\FFProbe\\Mapper' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/Mapper.php',
+        'FFMpeg\\FFProbe\\MapperInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/MapperInterface.php',
+        'FFMpeg\\FFProbe\\OptionsTester' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/OptionsTester.php',
+        'FFMpeg\\FFProbe\\OptionsTesterInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/OptionsTesterInterface.php',
+        'FFMpeg\\FFProbe\\OutputParser' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/OutputParser.php',
+        'FFMpeg\\FFProbe\\OutputParserInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/FFProbe/OutputParserInterface.php',
+        'FFMpeg\\Filters\\Audio\\AddMetadataFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Audio/AddMetadataFilter.php',
+        'FFMpeg\\Filters\\Audio\\AudioClipFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Audio/AudioClipFilter.php',
+        'FFMpeg\\Filters\\Audio\\AudioFilterInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Audio/AudioFilterInterface.php',
+        'FFMpeg\\Filters\\Audio\\AudioFilters' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Audio/AudioFilters.php',
+        'FFMpeg\\Filters\\Audio\\AudioResamplableFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Audio/AudioResamplableFilter.php',
+        'FFMpeg\\Filters\\Audio\\SimpleFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Audio/SimpleFilter.php',
+        'FFMpeg\\Filters\\Concat\\ConcatFilterInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Concat/ConcatFilterInterface.php',
+        'FFMpeg\\Filters\\Concat\\ConcatFilters' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Concat/ConcatFilters.php',
+        'FFMpeg\\Filters\\FilterInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/FilterInterface.php',
+        'FFMpeg\\Filters\\FiltersCollection' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/FiltersCollection.php',
+        'FFMpeg\\Filters\\Frame\\DisplayRatioFixerFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Frame/DisplayRatioFixerFilter.php',
+        'FFMpeg\\Filters\\Frame\\FrameFilterInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Frame/FrameFilterInterface.php',
+        'FFMpeg\\Filters\\Frame\\FrameFilters' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Frame/FrameFilters.php',
+        'FFMpeg\\Filters\\Gif\\GifFilterInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Gif/GifFilterInterface.php',
+        'FFMpeg\\Filters\\Gif\\GifFilters' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Gif/GifFilters.php',
+        'FFMpeg\\Filters\\Video\\ClipFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/ClipFilter.php',
+        'FFMpeg\\Filters\\Video\\CropFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/CropFilter.php',
+        'FFMpeg\\Filters\\Video\\CustomFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/CustomFilter.php',
+        'FFMpeg\\Filters\\Video\\ExtractMultipleFramesFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/ExtractMultipleFramesFilter.php',
+        'FFMpeg\\Filters\\Video\\FrameRateFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/FrameRateFilter.php',
+        'FFMpeg\\Filters\\Video\\PadFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/PadFilter.php',
+        'FFMpeg\\Filters\\Video\\ResizeFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/ResizeFilter.php',
+        'FFMpeg\\Filters\\Video\\RotateFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/RotateFilter.php',
+        'FFMpeg\\Filters\\Video\\SynchronizeFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/SynchronizeFilter.php',
+        'FFMpeg\\Filters\\Video\\VideoFilterInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/VideoFilterInterface.php',
+        'FFMpeg\\Filters\\Video\\VideoFilters' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/VideoFilters.php',
+        'FFMpeg\\Filters\\Video\\WatermarkFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Video/WatermarkFilter.php',
+        'FFMpeg\\Filters\\Waveform\\WaveformDownmixFilter' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Waveform/WaveformDownmixFilter.php',
+        'FFMpeg\\Filters\\Waveform\\WaveformFilterInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Waveform/WaveformFilterInterface.php',
+        'FFMpeg\\Filters\\Waveform\\WaveformFilters' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Filters/Waveform/WaveformFilters.php',
+        'FFMpeg\\Format\\AudioInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/AudioInterface.php',
+        'FFMpeg\\Format\\Audio\\Aac' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Audio/Aac.php',
+        'FFMpeg\\Format\\Audio\\DefaultAudio' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Audio/DefaultAudio.php',
+        'FFMpeg\\Format\\Audio\\Flac' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Audio/Flac.php',
+        'FFMpeg\\Format\\Audio\\Mp3' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Audio/Mp3.php',
+        'FFMpeg\\Format\\Audio\\Vorbis' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Audio/Vorbis.php',
+        'FFMpeg\\Format\\Audio\\Wav' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Audio/Wav.php',
+        'FFMpeg\\Format\\FormatInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/FormatInterface.php',
+        'FFMpeg\\Format\\FrameInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/FrameInterface.php',
+        'FFMpeg\\Format\\ProgressListener\\AbstractProgressListener' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/ProgressListener/AbstractProgressListener.php',
+        'FFMpeg\\Format\\ProgressListener\\AudioProgressListener' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/ProgressListener/AudioProgressListener.php',
+        'FFMpeg\\Format\\ProgressListener\\VideoProgressListener' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/ProgressListener/VideoProgressListener.php',
+        'FFMpeg\\Format\\ProgressableInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/ProgressableInterface.php',
+        'FFMpeg\\Format\\VideoInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/VideoInterface.php',
+        'FFMpeg\\Format\\Video\\DefaultVideo' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Video/DefaultVideo.php',
+        'FFMpeg\\Format\\Video\\Ogg' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Video/Ogg.php',
+        'FFMpeg\\Format\\Video\\WMV' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Video/WMV.php',
+        'FFMpeg\\Format\\Video\\WMV3' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Video/WMV3.php',
+        'FFMpeg\\Format\\Video\\WebM' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Video/WebM.php',
+        'FFMpeg\\Format\\Video\\X264' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Format/Video/X264.php',
+        'FFMpeg\\Media\\AbstractMediaType' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/AbstractMediaType.php',
+        'FFMpeg\\Media\\AbstractStreamableMedia' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/AbstractStreamableMedia.php',
+        'FFMpeg\\Media\\AbstractVideo' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/AbstractVideo.php',
+        'FFMpeg\\Media\\Audio' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/Audio.php',
+        'FFMpeg\\Media\\Clip' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/Clip.php',
+        'FFMpeg\\Media\\Concat' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/Concat.php',
+        'FFMpeg\\Media\\Frame' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/Frame.php',
+        'FFMpeg\\Media\\Gif' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/Gif.php',
+        'FFMpeg\\Media\\MediaTypeInterface' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/MediaTypeInterface.php',
+        'FFMpeg\\Media\\Video' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/Video.php',
+        'FFMpeg\\Media\\Waveform' => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src/FFMpeg/Media/Waveform.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Luhn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Luhn.php',
         'Faker\\DefaultGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/DefaultGenerator.php',
@@ -2025,6 +2203,10 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+        'Neutron\\TemporaryFilesystem\\IOException' => __DIR__ . '/..' . '/neutron/temporary-filesystem/src/Neutron/TemporaryFilesystem/IOException.php',
+        'Neutron\\TemporaryFilesystem\\Manager' => __DIR__ . '/..' . '/neutron/temporary-filesystem/src/Neutron/TemporaryFilesystem/Manager.php',
+        'Neutron\\TemporaryFilesystem\\TemporaryFilesystem' => __DIR__ . '/..' . '/neutron/temporary-filesystem/src/Neutron/TemporaryFilesystem/TemporaryFilesystem.php',
+        'Neutron\\TemporaryFilesystem\\TemporaryFilesystemInterface' => __DIR__ . '/..' . '/neutron/temporary-filesystem/src/Neutron/TemporaryFilesystem/TemporaryFilesystemInterface.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
@@ -3109,6 +3291,12 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         'Symfony\\Component\\EventDispatcher\\EventSubscriberInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/EventSubscriberInterface.php',
         'Symfony\\Component\\EventDispatcher\\GenericEvent' => __DIR__ . '/..' . '/symfony/event-dispatcher/GenericEvent.php',
         'Symfony\\Component\\EventDispatcher\\ImmutableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/ImmutableEventDispatcher.php',
+        'Symfony\\Component\\Filesystem\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/filesystem/Exception/ExceptionInterface.php',
+        'Symfony\\Component\\Filesystem\\Exception\\FileNotFoundException' => __DIR__ . '/..' . '/symfony/filesystem/Exception/FileNotFoundException.php',
+        'Symfony\\Component\\Filesystem\\Exception\\IOException' => __DIR__ . '/..' . '/symfony/filesystem/Exception/IOException.php',
+        'Symfony\\Component\\Filesystem\\Exception\\IOExceptionInterface' => __DIR__ . '/..' . '/symfony/filesystem/Exception/IOExceptionInterface.php',
+        'Symfony\\Component\\Filesystem\\Filesystem' => __DIR__ . '/..' . '/symfony/filesystem/Filesystem.php',
+        'Symfony\\Component\\Filesystem\\LockHandler' => __DIR__ . '/..' . '/symfony/filesystem/LockHandler.php',
         'Symfony\\Component\\Finder\\Comparator\\Comparator' => __DIR__ . '/..' . '/symfony/finder/Comparator/Comparator.php',
         'Symfony\\Component\\Finder\\Comparator\\DateComparator' => __DIR__ . '/..' . '/symfony/finder/Comparator/DateComparator.php',
         'Symfony\\Component\\Finder\\Comparator\\NumberComparator' => __DIR__ . '/..' . '/symfony/finder/Comparator/NumberComparator.php',
@@ -3476,6 +3664,7 @@ class ComposerStaticInit7b20e4d61e2f88170fbbc44c70d38a1f
         'Symfony\\Component\\Yaml\\Parser' => __DIR__ . '/..' . '/symfony/yaml/Parser.php',
         'Symfony\\Component\\Yaml\\Unescaper' => __DIR__ . '/..' . '/symfony/yaml/Unescaper.php',
         'Symfony\\Component\\Yaml\\Yaml' => __DIR__ . '/..' . '/symfony/yaml/Yaml.php',
+        'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'TestClass\\Test' => __DIR__ . '/..' . '/testclass/src/Test.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
