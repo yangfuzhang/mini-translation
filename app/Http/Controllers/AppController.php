@@ -11,8 +11,31 @@ class AppController extends Controller
     public function upload(Request $request) {
         $image_path = $request->file('rec_image')->store('upload');
 
-
         return response()->json(['image_path'=>$image_path]);
+    }
+
+    public function ffmpeg() {
+        $ffmpeg = FFMpeg\FFMpeg::create(array(
+            'ffmpeg.binaries'  => '/opt/local/ffmpeg/bin/ffmpeg',
+            'ffprobe.binaries' => '/opt/local/ffmpeg/bin/ffprobe',
+            'timeout'          => 3600, // The timeout for the underlying process
+            'ffmpeg.threads'   => 12,   // The number of threads that FFMpeg should use
+        ), $logger);
+
+        $video = $ffmpeg->open('video.mpeg');
+
+        $format = new Format\Video\X264();
+        $format->on('progress', function ($video, $format, $percentage) {
+            echo "$percentage % transcoded";
+        });
+
+        $format
+            -> setKiloBitrate(1000)          // 视频码率
+            -> setAudioChannels(2)        // 音频声道
+            -> setAudioKiloBitrate(256); // 音频码率
+
+        // 保存为
+        $video->save($format, public_path().'/images/upload/video.avi');
     }
 
     public function recognize(Request $request) {
