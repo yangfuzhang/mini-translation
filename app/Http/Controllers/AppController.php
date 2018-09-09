@@ -20,7 +20,7 @@ class AppController extends Controller
             'ffprobe.binaries' => '/opt/local/ffmpeg/bin/ffprobe',
             'timeout'          => 3600, // The timeout for the underlying process
             'ffmpeg.threads'   => 12,   // The number of threads that FFMpeg should use
-        ), $logger);
+        ));
 
         $video = $ffmpeg->open(public_path().'/images/upload/video.mpeg');
 
