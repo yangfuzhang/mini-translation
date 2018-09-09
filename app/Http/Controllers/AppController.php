@@ -16,8 +16,8 @@ class AppController extends Controller
 
     public function ffmpeg() {
         $ffmpeg = \FFMpeg\FFMpeg::create(array(
-            'ffmpeg.binaries'  => '/opt/local/ffmpeg/bin/ffmpeg',
-            'ffprobe.binaries' => '/opt/local/ffmpeg/bin/ffprobe',
+            'ffmpeg.binaries'  => '/usr/bin/ffmpeg',
+            'ffprobe.binaries' => '/usr/bin/ffmpeg',
             'timeout'          => 3600, // The timeout for the underlying process
             'ffmpeg.threads'   => 12,   // The number of threads that FFMpeg should use
         ));
