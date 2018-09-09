@@ -22,7 +22,7 @@ class AppController extends Controller
             'ffmpeg.threads'   => 12,   // The number of threads that FFMpeg should use
         ), $logger);
 
-        $video = $ffmpeg->open('video.mpeg');
+        $video = $ffmpeg->open(public_path().'/images/upload/video.mpeg');
 
         $format = new Format\Video\X264();
         $format->on('progress', function ($video, $format, $percentage) {
