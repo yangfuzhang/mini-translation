@@ -24,7 +24,7 @@ class AppController extends Controller
 
         $video = $ffmpeg->open(public_path().'/images/upload/video.mpeg');
 
-        $format = new \Format\Video\X264();
+        $format = new \FFMpeg\Format\Video\X264();
         $format->on('progress', function ($video, $format, $percentage) {
             echo "$percentage % transcoded";
         });
