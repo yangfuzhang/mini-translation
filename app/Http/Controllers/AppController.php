@@ -8,12 +8,6 @@ use Storage;
 
 class AppController extends Controller
 {
-    public function upload(Request $request) {
-        $image_path = $request->file('rec_image')->store('upload');
-
-        return response()->json(['image_path'=>$image_path]);
-    }
-
     public function ffmpeg() {
         $ffmpeg = \FFMpeg\FFMpeg::create(array(
             'ffmpeg.binaries'  => '/usr/bin/ffmpeg',
@@ -36,6 +30,12 @@ class AppController extends Controller
 
         // 保存为
         $video->save($format, public_path().'/images/upload/video.avi');
+    }
+
+    public function upload(Request $request) {
+        $image_path = $request->file('rec_image')->store('upload');
+
+        return response()->json(['image_path'=>$image_path]);
     }
 
     public function recognize(Request $request) {
