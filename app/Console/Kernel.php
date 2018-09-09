@@ -24,8 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->exec('rm /var/www/html/public/images/upload/*')
+                 ->everyMinute();
     }
 
     /**
