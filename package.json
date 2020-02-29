@@ -1,7 +1,7 @@
 {
-  "name": "zuduiyou",
+  "name": "limepie",
   "version": "1.0.0",
-  "description": "package dependencies for zuduiyou",
+  "description": "package dependencies for limepie",
   "main": "webpack.mix.js",
   "directories": {
     "test": "tests"
@@ -10,21 +10,21 @@
     "dev": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "node node_modules/dist/cross-env/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yangfuzhang/zuduiyou.git"
+    "url": "git+https://github.com/yangfuzhang/mini-translation.git"
   },
   "keywords": [
-    "zuduiyou"
+    "limepie"
   ],
   "author": "yangfuzhang0720@126.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yangfuzhang/zuduiyou/issues"
+    "url": "https://github.com/yangfuzhang/mini-translation/issues"
   },
-  "homepage": "https://github.com/yangfuzhang/zuduiyou#readme",
+  "homepage": "https://github.com/yangfuzhang/mini-translation/blob/master/readme.md",
   "dependencies": {
     "babel": "^6.23.0",
     "babel-polyfill": "^6.26.0",
