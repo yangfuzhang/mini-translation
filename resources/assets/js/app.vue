@@ -4,7 +4,7 @@
         <el-row>
             <el-col :xs="{span:6, offset:0}" :md="{span:2, offset:2}" :lg="{span:2, offset:4}">
 	            <div class="appname">
-	                <a href="https://www.limepietech.com" target="_blank">酸橙派</a>
+	                <a href="http://www.limepietech.com" target="_blank">酸橙派</a>
 	            </div>
             </el-col>
 	        <el-col :xs="{span:18, offset:0}" :md="{span:18, offset:0}" :lg="{span:14, offset:0}">
@@ -22,7 +22,7 @@
 		        <div style="width:100%;text-align:center;" id="service">
 		            <h2 style="font-size:32px;color:#555;font-weight:bold;">网站建设、小程序开发</h2>
 		            <p id="slogan">互联网+的时代，让您的产品离用户更近</p>
-		            <img src="https://www.limepietech.com/public/images/web.png"/>
+		            <img src="http://www.limepietech.com/public/images/web.png"/>
 		        </div>
 	        </el-col>
         </el-row>
@@ -31,7 +31,7 @@
 		    <el-col :xs="{span:24, offset:0}" :md="{span:18, offset:5}" :lg="{span:14, offset:5}" style="margin-top:40px;">
 		        <el-col :lg="{span:8, offset:3}">
 		        	<el-card>
-			            <img src="https://www.limepietech.com/public/images/website.png" class="image">
+			            <img src="http://www.limepietech.com/public/images/website.png" class="image">
 				        <div style="padding:14px;text-align:center;" id="contact">
 				            <span style="font-size:16px;">网站建设</span>
 					        <div class="bottom clearfix">
@@ -43,7 +43,7 @@
 
 		        <el-col :lg="{span:8, offset:2}">
 		        	<el-card>
-			            <img src="https://www.limepietech.com/public/images/wechat.png" class="image">
+			            <img src="http://www.limepietech.com/public/images/wechat.png" class="image">
 				        <div style="padding:14px;">
 				            <span style="font-size:16px;">小程序开发</span>
 					        <div class="bottom clearfix">
@@ -58,7 +58,7 @@
     
     <el-footer>
         <el-col :xs="{span:24, offset:0}" :md="{span:20, offset:2}" :lg="{span:16, offset:4}">
-        	©Copyright 深圳市酸橙派网络科技有限公司 <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备16126593号</a>
+        	©Copyright 深圳市酸橙派网络科技有限公司 <a href="http://beian.miit.gov.cn" target="_blank">粤ICP备16126593号</a>
         </el-col>
     </el-footer>
   </el-container>
