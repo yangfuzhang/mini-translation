@@ -42,8 +42,8 @@ class AppController extends Controller
         $path = $request->path;
         $rec_type = $request->rec_type;
 
-        $client_id = 'IGpdCaDx14qf8lWfWG00FHwc';
-        $client_secret = 'pyeGLISkbeQyjUotB2bmHTtw5c8kqfqp';
+        $client_id = env("BAIDU_CLIENT_ID");
+        $client_secret = env("BAIDU_CLIENT_SECRET");
 
         $http = new Client; 
 
@@ -126,9 +126,9 @@ class AppController extends Controller
         //$rec_type = $request->rec_type;
         $path = $request->path;
 
-        $appid = '1253144008';
-        $secret_id = 'AKIDFMH0XsDwfHh7MXvB6sSq22ynSwJWlM1U';
-        $secret_key = 'TmttvqaBbpqjPtlRwEKI4jDVaXHpCNMr';
+        $appid = env("TECENT_APP_ID");
+        $secret_id = env("TECENT_SECRET_ID");
+        $secret_key = env("TECENT_SECRET_KEY");
 
         $bucket = 'limepie';
         $current = time();
