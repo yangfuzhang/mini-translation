@@ -36,11 +36,9 @@ class AppController extends Controller
     public function constellation(Request $request) {
         $name = $request_name;
         
-        $content = Constellation::where('name', $name)->firstOrFail();
+        $results = Constellation::where('name', $name)->firstOrFail();
         
-        $result = {"name": $name, "content": $content};
-        
-        return response()->json(['results'=>$result]);
+        return response()->json(['results'=>$results]);
     }
 
     public function upload(Request $request) {
