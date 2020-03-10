@@ -34,7 +34,7 @@ class AppController extends Controller
     }
     
     public function constellation(Request $request) {
-        $name = $request_name;
+        $name = $request->name;
         
         $results = Constellation::where('name', $name)->firstOrFail();
         
