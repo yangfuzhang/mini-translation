@@ -38,7 +38,7 @@ class AppController extends Controller
         
         $content = Constellation::where('name', $name)->firstOrFail();
         
-        $result = {"name": $name, "content": $content}
+        $result = {"name": $name, "content": $content};
         
         return response()->json(['results'=>$result]);
     }
