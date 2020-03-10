@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Storage;
+use App\Constellation;
 
 class AppController extends Controller
 {
@@ -30,6 +31,16 @@ class AppController extends Controller
 
         // 保存为
         $video->save($format, public_path().'/images/upload/video.avi');
+    }
+    
+    public function constellation(Request $request) {
+        $name = $request_name;
+        
+        $content = Constellation::where('name', $name)->firstOrFail();
+        
+        $result = {"name": $name, "content": $content}
+        
+        return response()->json(['results'=>$result]);
     }
 
     public function upload(Request $request) {
