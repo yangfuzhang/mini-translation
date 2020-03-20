@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', '酸橙派') }}</title>
+    <title>{{ config('app.name', '酸橙派API') }}</title>
 
     <!-- Styles -->
     <style>
@@ -32,8 +32,9 @@
 </head>
 <body>
 
-    <div id="app"></div>
-    
-    <script src="/js/app.js"></script>
+    <div id="app">
+       v1.0.0: This is a website for api requests.
+    </div>
+    <!--<script src="/js/app.js"></script>-->
 </body>
 </html>
