@@ -7,6 +7,7 @@ Homestead.yaml
 .env
 =======
 npm-debug.log
+deploy.sh
 
 # Laravel 4 specific
 bootstrap/compiled.php
